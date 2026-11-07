@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali | Samridhi Mahajan</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;padding:25px;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;color:white;
+ font-family:Arial,sans-serif;
+ background:radial-gradient(circle at top,#59245e,#130d29 75%);
+}
+.card{
+ max-width:520px;width:100%;padding:30px 22px;
+ border:1px solid #ffffff35;border-radius:25px;
+ background:#ffffff0d;
+ box-shadow:0 0 35px #ed9bff25;
+}
+.tag{color:#f7c9ff;letter-spacing:3px;font-size:12px}
+h1{
+ font-size:clamp(36px,9vw,55px);
+ background:linear-gradient(90deg,#ffcb70,#ff80c8,#c7a4ff);
+ -webkit-background-clip:text;color:transparent;
+}
+.diya{font-size:75px;animation:glow 1.5s infinite alternate}
+@keyframes glow{
+ from{filter:drop-shadow(0 0 8px orange)}
+ to{filter:drop-shadow(0 0 30px gold)}
+}
+p{line-height:1.8;color:#eee;font-size:15px}
+button{
+ border:0;border-radius:30px;padding:15px 24px;
+ background:linear-gradient(90deg,#ffd477,#ff9bce);
+ color:#25102e;font-weight:bold;font-size:15px;
+ cursor:pointer;margin-top:15px;
+}
+#message{display:none;animation:appear 1s ease}
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
+}
+footer{font-size:11px;color:#cbbbdc;margin-top:25px}
+</style>
+</head>
+
+<body>
+<div class="card">
+
+<div class="tag">SYSTEM STATUS: FESTIVE ✨</div>
+
+<div class="diya">🪔</div>
+
+<h1>Happy Diwali!</h1>
+
+<p>
+Initializing happiness.exe...<br>
+Loading lights, love and endless positivity...
+</p>
+
+<button id="lightButton" onclick="celebrate()">
+✨ LIGHT UP YOUR DIWALI
+</button>
+
+<div id="message">
+
+<h2>✨ A Festival of Lights, Love & New Beginnings ✨</h2>
+
+<p>
+May the festival of lights illuminate your life
+with endless happiness, prosperity, peace and success.
+</p>
+
+<p>
+May every diya bring a new hope, every sparkle
+fill your heart with joy, and every moment create
+beautiful memories with your loved ones.
+</p>
+
+<p>
+Wishing you and your family a wonderful Diwali
+filled with warmth, laughter, good health and
+countless blessings!
+</p>
+
+<h2>With warm wishes,</h2>
+<h2 style="color:#ffb9df">Samridhi Mahajan 💗</h2>
+
+<p>Made with love & a little bit of code ✨</p>
+
+<button onclick="share()">💌 Share this wish</button>
+
+</div>
+
+<footer>Made with 💗 &lt;code/&gt; by a techie</footer>
+</div>
+
+<script>
+function celebrate(){
+ document.getElementById("message").style.display="block";
+ document.getElementById("lightButton").style.display="none";
+}
+
+function share(){
+ const data={
+  title:"Happy Diwali 🪔",
+  text:"Samridhi Mahajan wishes you and your family a very Happy Diwali! ✨",
+  url:location.href
+ };
+
+ if(navigator.share){
+  navigator.share(data);
+ }else{
+  navigator.clipboard.writeText(data.text+" "+data.url)
+  .then(()=>alert("Copied! Share with everyone 💗"));
+ }
+}
+</script>
+
+</body>
+</html>
